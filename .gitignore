@@ -1,0 +1,53 @@
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+public/manifest.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# TypeScript
+*.tsbuildinfo
+
+# JetBrains
+.idea/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Extensions
+.crx
+
+# Temporary
+tmp/
+
+# Ignore generated popup and content bundles created by webpack
+dist/
+
+# keep package-lock in repo? if not, uncomment
+# package-lock.json
