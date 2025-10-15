@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Word Saver",
+  "version": "1.0",
+  "description": "Save selected words and display them in a popup",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "commands"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}
