@@ -1,4 +1,22 @@
-import { SavedTextItem } from './types';
+import { SavedTextItem, ContextMenuMessage } from './types';
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: 'saveSelectedWord',
+    title: 'Save word',
+    contexts: ['selection'],
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === 'saveSelectedWord' && tab?.id && info.selectionText) {
+    const message: ContextMenuMessage = {
+      action: 'contextMenuSelection',
+      text: info.selectionText,
+    };
+    chrome.tabs.sendMessage(tab.id, message);
+  }
+});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'saveWord') {

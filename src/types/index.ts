@@ -14,3 +14,8 @@ export interface SavedTextItem {
 export type StorageData = {
   savedWords: SavedTextItem[];
 };
+
+export interface ContextMenuMessage {
+  action: 'contextMenuSelection';
+  text: string;
+}
